@@ -8,7 +8,8 @@
 using namespace cv;
 using namespace std;
 
-int main() {
+int main() 
+{
     // Load the image
     Mat image = imread("/Users/cameron/Desktop/RedCar.bmp"); // Path to image
 
@@ -42,7 +43,8 @@ int main() {
     string largestObjectColor; // Initialise variable for storing the name of the object
 
     // Iterate over each color's HSV mask
-    for (int i = 0; i < combinedMask.size(); i++) {
+    for (int i = 0; i < combinedMask.size(); i++) 
+    {
         // Morphology Operations -- morph each mask to filter out noise, etc
         Mat morphed; // Variable for storing morphed imaged
         Mat kernel = getStructuringElement(MORPH_ELLIPSE, Size(7, 7)); // using ellipse structuring element for morphing
@@ -55,7 +57,8 @@ int main() {
         findContours(morphed, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE); // find (external/outer) contours in each morphed image
 
         // Iterate through all the contours found
-        for (const auto &contour : contours) {
+        for (const auto &contour : contours) 
+        {
             double area = contourArea(contour); // calculate area of contour
             if (area > maxArea) // if the area of the current contour in the loop is greater than the current highest area
             {
