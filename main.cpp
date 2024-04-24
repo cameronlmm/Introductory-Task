@@ -70,7 +70,7 @@ int main()
     }
     
     // Print the color of the object
-    cout << "The color of object is: " << "*** " << largestObjectColor << " ***" << " (Predominant Color)" << endl;
+    cout << "Object Color: " << largestObjectColor << endl;
 
     // Display masks of isolated colors and final image with contours
     namedWindow("Isolated Red");
